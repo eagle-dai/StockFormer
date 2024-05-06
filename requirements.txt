@@ -1,0 +1,15 @@
+gym
+numpy
+pandas
+scikit-learn
+statsmodels
+stockstats
+tensorboardX
+torch
+torchvision
+tqdm
+wrapt
+wrds
+xlrd
+yfinance
+shortuuid
