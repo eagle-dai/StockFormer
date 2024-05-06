@@ -9,3 +9,4 @@ code/*/*/*/.DS_Store
 
 venv/
 log/
+checkpoints/

@@ -2,9 +2,11 @@
 ## Environment
 - vscode
 - python3 (version >= 3.9)
-```
+
+```bat
 python -m venv ./venv
-.\venv\Scripts\activate # or: source ./venv/bin/activate
+.\venv\Scripts\activate
+rem or: source ./venv/bin/activate
 ```
 
 In VS Code, select Python interpreter to the "venv".
@@ -15,7 +17,22 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-#### 1st stage：Representation Learning
+### Verify GPU
+```
+> python
+import torch
+print(torch.__version__)
+2.3.0+cu121
+print(torch.cuda.is_available())
+True
+```
+
+If cuda is not avaialble, refert to:
+- run nvidia-smi to check driver and cuda versions. Reinstall driver if needed
+- pip uninstall torch torchvision torchaudio
+- reinstall: https://pytorch.org/
+
+## 1st stage：Representation Learning
 
 1）Relational state inference module training: 
 
