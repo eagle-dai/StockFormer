@@ -41,14 +41,14 @@ cd code/Transformer/script
 sh train_pred_long.sh
 ```
 
-3) Short-term state inference  module training:
+3）Short-term state inference  module training:
 
 ```bash
 cd code/Transformer/script
 sh train_pred_short.sh
 ```
 
-4) Select the best model of three state inference modules from '*code/Transformer/checkpoints/*' according to their performance on validation set and add them to '*code/Transformer/pretrained/*'
+4）Select the best model of three state inference modules from '*code/Transformer/checkpoints/*' according to their performance on validation set and add them to '*code/Transformer/pretrained/*'
 
 **OR** directly use the model which have been pretrained in advance by us (dir:'*code/Transformer/pretrained/csi/* ')
 
