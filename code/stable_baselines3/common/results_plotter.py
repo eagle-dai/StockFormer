@@ -117,6 +117,6 @@ def plot_results(
         data_frame = load_results(folder)
         if num_timesteps is not None:
             data_frame = data_frame[data_frame.l.cumsum() <= num_timesteps]
-        data_frames.append(data_frame)
+        data_frames._append(data_frame)
     xy_list = [ts2xy(data_frame, x_axis) for data_frame in data_frames]
     plot_curves(xy_list, x_axis, task_name, figsize)

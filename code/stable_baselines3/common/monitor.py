@@ -230,7 +230,7 @@ def load_results(path: str) -> pandas.DataFrame:
             data_frame = pandas.read_csv(file_handler, index_col=None)
             headers.append(header)
             data_frame["t"] += header["t_start"]
-        data_frames.append(data_frame)
+        data_frames._append(data_frame)
     data_frame = pandas.concat(data_frames)
     data_frame.sort_values("t", inplace=True)
     data_frame.reset_index(inplace=True)

@@ -146,7 +146,7 @@ class FeatureEngineer:
                     ].to_list()
                     for s in range(1,3):
                         temp_indicator[indicator+'_'+str(s)] = temp_indicator[indicator].shift(s)
-                    indicator_df = indicator_df.append(
+                    indicator_df = indicator_df._append(
                         temp_indicator, ignore_index=True
                     )
                 except Exception as e:
@@ -182,7 +182,7 @@ class FeatureEngineer:
                     temp_indicator["date"] = df[df.tic == unique_ticker[i]][
                         "date"
                     ].to_list()
-                    indicator_df = indicator_df.append(
+                    indicator_df = indicator_df._append(
                         temp_indicator, ignore_index=True
                     )
                 except Exception as e:
@@ -280,7 +280,7 @@ class FeatureEngineer:
                     turbulence_temp = 0
             else:
                 turbulence_temp = 0
-            turbulence_index.append(turbulence_temp)
+            turbulence_index._append(turbulence_temp)
 
         turbulence_index = pd.DataFrame(
             {"date": df_price_pivot.index, "turbulence": turbulence_index}
