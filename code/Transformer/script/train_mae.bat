@@ -1,4 +1,4 @@
-rem @echo off
+@REM @echo off
 set SCRIPT_PATH=%~dp0
 cd /d %SCRIPT_PATH%
 
