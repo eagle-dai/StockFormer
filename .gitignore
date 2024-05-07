@@ -11,3 +11,4 @@ venv/
 log/
 checkpoints/
 code/results/
+code/tensorboard_log/
