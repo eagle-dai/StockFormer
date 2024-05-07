@@ -13,3 +13,5 @@ wrds
 xlrd
 yfinance
 shortuuid
+matplotlib
+tensorboard

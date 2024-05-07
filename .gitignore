@@ -10,3 +10,4 @@ code/*/*/*/.DS_Store
 venv/
 log/
 checkpoints/
+code/results/

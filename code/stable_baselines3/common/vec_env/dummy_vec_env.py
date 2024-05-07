@@ -53,7 +53,7 @@ class DummyVecEnv(VecEnv):
     def seed(self, seed: Optional[int] = None) -> List[Union[None, int]]:
         seeds = list()
         for idx, env in enumerate(self.envs):
-            seeds.append(env.seed(seed + idx))
+            seeds.append(env._seed(seed + idx))
         return seeds
 
     def reset(self) -> VecEnvObs:
