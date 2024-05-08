@@ -122,9 +122,9 @@ class Exp_mae(Exp_Basic):
         test_data, test_loader = self._get_data(flag = 'test')
 
         metrics_builders = [
-        metrics_object.MAE,
-        metrics_object.MSE
-    ]
+            metrics_object.MAE,
+            metrics_object.MSE
+        ]
 
         path = os.path.join('./checkpoints/',setting)
         if not os.path.exists(path):

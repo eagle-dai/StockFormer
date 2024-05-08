@@ -10,3 +10,6 @@ code/*/*/*/.DS_Store
 venv/
 log/
 checkpoints/
+code/results/
+code/tensorboard_log/
+code/trained_models/
