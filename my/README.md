@@ -1,18 +1,11 @@
 
 ## Environment
-- vscode
 - python3 (version >= 3.9)
 
-```bat
-python -m venv ./venv
-.\venv\Scripts\activate
-rem or: source ./venv/bin/activate
-```
+```bash
+python3 -m venv ./venv
+source ./venv/bin/activate
 
-In VS Code, select Python interpreter to the "venv".
-
-Run in git bash:
-```
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -32,29 +25,40 @@ If cuda is not avaialble, refert to:
 - pip uninstall torch torchvision torchaudio
 - reinstall: https://pytorch.org/
 
+
 ## 1st stage：Representation Learning
 
 1）Relational state inference module training: 
 
-```bat
-cd code\Transformer\script
-train_mae.bat
+```bash
+cd code/Transformer/script
+sh train_mae.sh
 ```
 
 2）Long-term state inference module training:
 
-```bat
-cd code\Transformer\script
-train_pred_long.bat
+```bash
+cd code/Transformer/script
+sh train_pred_long.sh
 ```
 
 3）Short-term state inference  module training:
 
-```bat
-cd code\Transformer\script
-train_pred_short.bat
+```bash
+cd code/Transformer/script
+sh train_pred_short.sh
 ```
 
-4）Select the best model of three state inference modules from '*code\Transformer\checkpoints\*' according to their performance on validation set and add them to '*code\Transformer\pretrained\*'
+4）Select the best model of three state inference modules from '*code/Transformer/checkpoints/*' according to their performance on validation set and add them to '*code/Transformer/pretrained/*'
 
-**OR** directly use the model which have been pretrained in advance by us (dir:'*code\Transformer\pretrained\csi\* ')
+**OR** directly use the model which have been pretrained in advance by us (dir:'*code/Transformer/pretrained/csi/* ')
+
+## 2nd stage：Policy Learning
+
+1) train SAC model (three state inference module's path can be changed in *train_rl.py* file)
+
+```bash
+python train_rl.py
+```
+
+2) get prediction result on test set from '*code/results/df_print/*'

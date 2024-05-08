@@ -13,7 +13,7 @@ import torch
 import numpy as np
 
 
-fix_seed = 2022
+fix_seed = 2024
 random.seed(fix_seed)
 torch.manual_seed(fix_seed)
 np.random.seed(fix_seed)
