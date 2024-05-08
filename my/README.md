@@ -5,6 +5,7 @@
 ```bash
 python3 -m venv ./venv
 source ./venv/bin/activate
+# To activate venv on Windows, command: .\venv\Scripts\activate
 
 python -m pip install --upgrade pip
 pip install -r requirements.txt
@@ -21,9 +22,10 @@ True
 ```
 
 If cuda is not avaialble, refert to:
-- run nvidia-smi to check driver and cuda versions. Reinstall driver if needed
+- run nvidia-smi to check driver and cuda versions. Reinstall proper vsersion of nvidia GPU driver if needed.
 - pip uninstall torch torchvision torchaudio
-- reinstall: https://pytorch.org/
+- reinstall: https://pytorch.org/, e.g.,
+  pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 
 
 ## 1st stage：Representation Learning

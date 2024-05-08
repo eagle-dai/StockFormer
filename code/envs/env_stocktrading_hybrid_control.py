@@ -279,8 +279,8 @@ class StockTradingEnv(gym.Env):
                 plt.savefig(
                     self.figure_path+"account_value_{}_{}_{}.png".format(
                         self.mode, self.model_name, self.episode
-                    ),
-                    index=False,
+                    )
+                    # index=False,
                 )
                 plt.close()
 
