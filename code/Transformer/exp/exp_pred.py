@@ -118,8 +118,8 @@ class Exp_pred(Exp_Basic):
         test_data, test_loader = self._get_data(flag = 'test')
 
         metrics_builders = [
-        metrics_object.MIRRTop1,
-    ]
+            metrics_object.MIRRTop1,
+        ]
 
         path = os.path.join('./checkpoints/',setting)
         if not os.path.exists(path):

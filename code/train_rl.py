@@ -53,7 +53,10 @@ for ticker in ticker_list:
     temp_df['label_long_term'] = temp_df['close'].pct_change(periods=prediction_len[1]).shift(periods=(-1*prediction_len[1]))
     temp_df['tic'] = pd.Series([ticker]*len(temp_df))
     # temp_df = temp_df.rename(columns={'Date':'date', 'Open':'open', 'Close':'close', 'High':'high', 'Low':'low', 'Volume':'volume'})
-    df = pd.concat((df, temp_df))
+    if (df.shape[0] == 0): # to supress warning
+        df = temp_df
+    else:
+        df = pd.concat((df, temp_df))    
 
 df = df.sort_values(by=['date','tic'])
     
