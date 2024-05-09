@@ -22,7 +22,8 @@ class MetricMeter:
         world_size = torch.distributed.get_world_size()
         buf = [[] for _ in range(world_size)]
         for chunk in utils.chunks(self.data, 200):  
-            t = torch.tensor(chunk, dtype=torch.float64, device='cuda')
+            # t = torch.tensor(chunk, dtype=torch.float64, device='cuda')
+            t = torch.tensor(chunk, dtype=torch.float64, device= 'cuda:0' if torch.cuda.is_available() else 'cpu')
             dist.barrier()
             output_tensors = [t.clone() for _ in range(world_size)]
             torch.distributed.all_gather(output_tensors, t)
