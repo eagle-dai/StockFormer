@@ -49,7 +49,10 @@ class Stock_Data():
             temp_df['label_short_term'] = temp_df['close'].pct_change(periods=self.prediction_len[0]).shift(periods=(-1*self.prediction_len[0]))
             temp_df['label_long_term'] = temp_df['close'].pct_change(periods=self.prediction_len[1]).shift(periods=(-1*self.prediction_len[1]))
             temp_df['tic'] = ticket
-            df = pd.concat((df, temp_df))
+            if (df.shape[0] == 0): # to supress warning
+                df = temp_df
+            else:
+                df = pd.concat((df, temp_df))
         df = df.sort_values(by=['date','tic'])
 
         fe = FeatureEngineer(
